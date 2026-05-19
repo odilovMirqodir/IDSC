@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IDSC provides professional IT services, information systems, decision support platforms, automation, analytics, integration, and IT consulting for government and enterprise organizations.">
+    <meta name="keywords" content="IDSC, Information and Decision Support Center, IT services Uzbekistan, digital transformation, information systems, decision support systems, automation, analytics, software development, system integration, government IT solutions, enterprise IT solutions">
+    <meta name="theme-color" content="#06111F">
+    <meta property="og:title" content="IDSC — Information and Decision Support Center | IT Services">
+    <meta property="og:description" content="Professional IT services and digital solutions for government and enterprise.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>IDSC — Information and Decision Support Center | IT Services and Digital Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-navy: #06111F;
+            --secondary-bg: #0B1B2E;
+            --card-bg: #101C2F;
+            --deep-section-bg: #081827;
+            --header-bg: rgba(6, 17, 31, 0.88);
+            --primary-text: #F8FAFC;
+            --secondary-text: #CBD5E1;
+            --muted-text: #94A3B8;
+            --corporate-blue: #2563EB;
+            --deep-blue: #1E3A8A;
+            --button-hover: #1D4ED8;
+            --blue-glow: rgba(37, 99, 235, 0.18);
+            --border: rgba(148, 163, 184, 0.16);
+            --border-strong: rgba(148, 163, 184, 0.24);
+            --gold-accent: #C9A646;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-navy);
+            color: var(--primary-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-navy);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.6s ease-out;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .preloader::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(37, 99, 235, 0.05) 25%, rgba(37, 99, 235, 0.05) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.05) 75%, rgba(37, 99, 235, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(37, 99, 235, 0.05) 25%, rgba(37, 99, 235, 0.05) 26%, transparent 27%, transparent 74%, rgba(37, 99, 235, 0.05) 75%, rgba(37, 99, 235, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            animation: gridShift 10s linear infinite;
+            opacity: 0.15;
+        }
+
+        @keyframes gridShift {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        .preloader-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .preloader-logo {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            color: var(--primary-text);
+        }
+
+        .preloader-logo span {
+            color: var(--gold-accent);
+        }
+
+        .preloader-subtitle {
+            font-size: 0.875rem;
+            color: var(--muted-text);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+        }
+
+        .preloader-text {
+            font-size: 0.875rem;
+            color: var(--muted-text);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            height: 1.5rem;
+        }
+
+        .preloader-progress {
+            width: 200px;
+            height: 2px;
+            background-color: var(--deep-section-bg);
+            border-radius: 1px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .preloader-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--corporate-blue), var(--deep-blue));
+            width: 0%;
+            animation: progressBar 2s ease-in-out forwards;
+        }
+
+        @keyframes progressBar {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: transparent;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        header.scrolled {
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .logo-text {
+            color: var(--primary-text);
+        }
+
+        .logo-accent {
+            color: var(--gold-accent);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--muted-text);
+        }
+
+        nav {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--corporate-blue);
+        }
+
+        nav a.active {
+            color: var(--corporate-blue);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-text);
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .lang-btn.active {
+            color: var(--corporate-blue);
+        }
+
+        .lang-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--gold-accent);
+        }
+
+        .lang-btn:hover {
+            color: var(--corporate-blue);
+        }
+
+        .cta-button {
+            background-color: var(--corporate-blue);
+            color: var(--primary-text);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--button-hover);
+            box-shadow: 0 0 20px var(--blue-glow);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--primary-text);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 992px) {
+            nav {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--secondary-bg);
+                gap: 0;
+                padding: 2rem;
+                border-bottom: 1px solid var(--border-strong);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(8px, -8px);
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, -30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: var(--corporate-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--primary-text);
+        }
+
+        .hero-paragraph {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            background-color: var(--corporate-blue);
+            color: var(--primary-text);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--button-hover);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-text);
+            padding: 1rem 2rem;
+            border: 1px solid var(--muted-text);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--corporate-blue);
+            color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+        }
+
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: var(--corporate-blue);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            z-index: 1;
+        }
+
+        .grid-visual {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, var(--border) 25%, var(--border) 26%, transparent 27%, transparent 74%, var(--border) 75%, var(--border) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, var(--border) 25%, var(--border) 26%, transparent 27%, transparent 74%, var(--border) 75%, var(--border) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        .visual-card {
+            position: absolute;
+            border: 1px solid var(--border-strong);
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+        }
+
+        .visual-card-1 {
+            top: 20px;
+            right: 20px;
+            width: 250px;
+        }
+
+        .visual-card-2 {
+            bottom: 40px;
+            right: 80px;
+            width: 200px;
+        }
+
+        .visual-card-3 {
+            bottom: 100px;
+            left: 20px;
+            width: 220px;
+        }
+
+        .visual-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--corporate-blue);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .visual-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-text);
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding: 3rem 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-visual {
+                height: 300px;
+            }
+
+            .hero::before {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        /* ===== TRUST STRIP ===== */
+        .trust-strip {
+            background-color: var(--secondary-bg);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+        }
+
+        .trust-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-left: 2px solid var(--corporate-blue);
+        }
+
+        .trust-item::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: var(--corporate-blue);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .trust-text {
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+            line-height: 1.6;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: var(--corporate-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            color: var(--primary-text);
+        }
+
+        .about-intro {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 800px;
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+            transform: translateY(-2px);
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: var(--corporate-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-text);
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            line-height: 1.7;
+        }
+
+        /* ===== STATISTICS SECTION ===== */
+        .statistics {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--corporate-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            font-weight: 500;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--corporate-blue);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--corporate-blue);
+            font-size: 1.25rem;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+            transform: translateY(-4px);
+        }
+
+        .project-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--corporate-blue);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            font-size: 0.875rem;
+            color: var(--muted-text);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+            line-height: 1.7;
+        }
+
+        /* ===== PARTNERS SECTION ===== */
+        .partners {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .partners-intro {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 3rem;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .partner-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .partner-item:hover {
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        .partner-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--muted-text);
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--corporate-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-description {
+            font-size: 0.875rem;
+            color: var(--muted-text);
+            line-height: 1.6;
+        }
+
+        /* ===== SECURITY SECTION ===== */
+        .security {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .security-intro {
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .security-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .security-card:hover {
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        .security-icon {
+            width: 40px;
+            height: 40px;
+            border-left: 3px solid var(--corporate-blue);
+            margin-bottom: 1rem;
+        }
+
+        .security-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .security-description {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            line-height: 1.7;
+        }
+
+        /* ===== TECHNOLOGIES SECTION ===== */
+        .technologies {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .tech-category {
+            margin-bottom: 3rem;
+        }
+
+        .tech-category-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--corporate-blue);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tech-tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.25rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            border-color: var(--corporate-blue);
+            color: var(--corporate-blue);
+            box-shadow: 0 0 20px var(--blue-glow);
+        }
+
+        /* ===== MEDIA SECTION ===== */
+        .media {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .media-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--secondary-text);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: var(--corporate-blue);
+            color: var(--dark-navy);
+            border-color: var(--corporate-blue);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--corporate-blue);
+            color: var(--corporate-blue);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .media-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .media-card.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .media-card:hover {
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        .media-date {
+            font-size: 0.875rem;
+            color: var(--muted-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .media-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--corporate-blue);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .media-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .media-description {
+            font-size: 0.95rem;
+            color: var(--secondary-text);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .read-more-link {
+            color: var(--corporate-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-link:hover {
+            color: var(--button-hover);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .contact-cta {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 3rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--corporate-blue);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            color: var(--secondary-text);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border);
+            color: var(--primary-text);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--corporate-blue);
+            box-shadow: 0 0 20px var(--blue-glow);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background-color: var(--corporate-blue);
+            color: var(--primary-text);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: var(--button-hover);
+            box-shadow: 0 0 30px var(--blue-glow);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--secondary-bg);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column p {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--corporate-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+        }
+
+        /* ===== UTILITIES ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            min-height: 600px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                IDSC<span>.</span>
+            </div>
+            <div class="preloader-subtitle">Information and Decision Support Center</div>
+            <div class="preloader-text" id="preloaderText">Initializing secure digital environment...</div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-text">IDSC</span>
+                <span class="logo-accent">Information & Decision Support</span>
+            </div>
+            <nav id="nav" class="nav">
+                <a href="#home" data-translate="nav_home">Home</a>
+                <a href="#about" data-translate="nav_about">About</a>
+                <a href="#services" data-translate="nav_services">Services</a>
+                <a href="#projects" data-translate="nav_projects">Projects</a>
+                <a href="#partners" data-translate="nav_partners">Partners</a>
+                <a href="#media" data-translate="nav_media">Media</a>
+                <a href="#contact" data-translate="nav_contact">Contact</a>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="uz">UZ</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="cta-button" data-translate="header_cta">Get Consultation</button>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-label" data-translate="hero_label">Information and Decision Support Center</div>
+            <h1 class="hero-title" data-translate="hero_title">IDSC — raqamli transformatsiya va qaror qabul qilish tizimlari markazi</h1>
+            <p class="hero-paragraph" data-translate="hero_paragraph">Davlat va nodavlat tashkilotlar uchun xavfsiz, barqaror va samarali IT yechimlar yaratamiz. Axborot tizimlari, avtomatlashtirish, integratsiya, tahlil va qaror qabul qilishni qo'llab-quvvatlovchi platformalarni ishlab chiqamiz.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" data-translate="hero_btn1">Xizmatlarimiz</button>
+                <button class="btn-secondary" data-translate="hero_btn2">Loyihalarni ko'rish</button>
+            </div>
+            <div class="hero-badges">
+                <div class="badge" data-translate="badge1">Davlat va korporativ sektor</div>
+                <div class="badge" data-translate="badge2">Xavfsiz arxitektura</div>
+                <div class="badge" data-translate="badge3">Barqaror integratsiya</div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="grid-visual"></div>
+            <div class="visual-card visual-card-1">
+                <div class="visual-label" data-translate="visual_label1">Decision Support</div>
+                <div class="visual-value">Real-time</div>
+            </div>
+            <div class="visual-card visual-card-2">
+                <div class="visual-label" data-translate="visual_label2">Digital Systems</div>
+                <div class="visual-value">Active</div>
+            </div>
+            <div class="visual-card visual-card-3">
+                <div class="visual-label" data-translate="visual_label3">Secure Integration</div>
+                <div class="visual-value">Protected</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+        <div class="trust-content">
+            <div class="trust-item">
+                <div class="trust-text" data-translate="trust1">Davlat tashkilotlari bilan ishlash tajribasi</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-text" data-translate="trust2">Korporativ IT yechimlar</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-text" data-translate="trust3">Xavfsizlikka yo'naltirilgan arxitektura</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-text" data-translate="trust4">Ma'lumotlarga asoslangan boshqaruv</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="section-label" data-translate="about_label">BIZ HAQIMIZDA</div>
+        <h2 class="section-title" data-translate="about_title">Information and Decision Support Center</h2>
+        <p class="about-intro" data-translate="about_intro">IDSC — davlat va nodavlat tashkilotlar uchun zamonaviy axborot tizimlari, avtomatlashtirish platformalari, analitik dashboardlar va qaror qabul qilishni qo'llab-quvvatlovchi IT yechimlarni ishlab chiqishga ixtisoslashgan kompaniya.</p>
+        <div class="about-cards">
+            <div class="card">
+                <div class="card-label" data-translate="about_card1_label">MISSIYA</div>
+                <h3 class="card-title" data-translate="about_card1_title">Missiya</h3>
+                <p class="card-text" data-translate="about_card1_text">Tashkilotlarning raqamli jarayonlarini soddalashtirish, tezlashtirish va ishonchli boshqaruv tizimlarini yaratish.</p>
+            </div>
+            <div class="card">
+                <div class="card-label" data-translate="about_card2_label">VIZYON</div>
+                <h3 class="card-title" data-translate="about_card2_title">Vizyon</h3>
+                <p class="card-text" data-translate="about_card2_text">Texnologiya, ma'lumot va tajribaga tayangan holda samarali boshqaruv va tahliliy qarorlar ekotizimini rivojlantirish.</p>
+            </div>
+            <div class="card">
+                <div class="card-label" data-translate="about_card3_label">QIYMATLAR</div>
+                <h3 class="card-title" data-translate="about_card3_title">Qiymatlar</h3>
+                <p class="card-text" data-translate="about_card3_text">Ishonchlilik, xavfsizlik, aniqlik, mas'uliyat va uzoq muddatli hamkorlik.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="statistics">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">[X]+</div>
+                <div class="stat-label" data-translate="stat1">Yillik tajriba</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">[X]+</div>
+                <div class="stat-label" data-translate="stat2">Yakunlangan loyiha</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">[X]+</div>
+                <div class="stat-label" data-translate="stat3">Hamkor tashkilot</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">[X]+</div>
+                <div class="stat-label" data-translate="stat4">Joriy etilgan tizim</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <div class="section-label" data-translate="services_label">XIZMATLAR</div>
+        <h2 class="section-title" data-translate="services_title">Biz taklif qiladigan xizmatlar</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">1</div>
+                <h3 class="service-title" data-translate="service1_title">Maxsus dasturiy ta'minot ishlab chiqish</h3>
+                <p class="service-description" data-translate="service1_desc">Tashkilot ehtiyojlariga mos web-platformalar, ichki tizimlar, boshqaruv panellari va maxsus biznes ilovalar yaratamiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">2</div>
+                <h3 class="service-title" data-translate="service2_title">Axborot tizimlarini ishlab chiqish</h3>
+                <p class="service-description" data-translate="service2_desc">Davlat va korporativ tuzilmalar uchun rollar, jarayonlar, hisobotlar va integratsiyalar bilan ishlaydigan tizimlar yaratamiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">3</div>
+                <h3 class="service-title" data-translate="service3_title">Qaror qabul qilishni qo'llab-quvvatlovchi tizimlar</h3>
+                <p class="service-description" data-translate="service3_desc">Tahlil, monitoring, ko'rsatkichlar va boshqaruv uchun qarorlarni qo'llab-quvvatlovchi platformalar ishlab chiqamiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">4</div>
+                <h3 class="service-title" data-translate="service4_title">Jarayonlarni avtomatlashtirish</h3>
+                <p class="service-description" data-translate="service4_desc">Murakkab va qo'lda bajariladigan ish jarayonlarini raqamlashtiramiz va optimallashtiramiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">5</div>
+                <h3 class="service-title" data-translate="service5_title">Ma'lumotlar tahlili va dashboardlar</h3>
+                <p class="service-description" data-translate="service5_desc">Rahbariyat va mutaxassislar uchun ma'lumotlarni ko'rish, tahlil qilish va kuzatish vositalarini yaratamiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">6</div>
+                <h3 class="service-title" data-translate="service6_title">Tizimlar integratsiyasi</h3>
+                <p class="service-description" data-translate="service6_desc">Ichki tizimlar, API, ma'lumotlar bazalari va tashqi servislarni yagona ekotizimga bog'laymiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">7</div>
+                <h3 class="service-title" data-translate="service7_title">Xavfsizlikka yo'naltirilgan arxitektura</h3>
+                <p class="service-description" data-translate="service7_desc">Ruxsatlar, audit loglar, autentifikatsiya va himoyalangan ma'lumot almashinuvi asosida tizimlar quramiz.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">8</div>
+                <h3 class="service-title" data-translate="service8_title">IT konsalting va texnik ekspertiza</h3>
+                <p class="service-description" data-translate="service8_desc">Texnik arxitektura, raqamlashtirish strategiyasi, tizim tanlovi va rivojlantirish bo'yicha ekspert yondashuvni taklif qilamiz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <div class="section-label" data-translate="projects_label">LOYIHALAR</div>
+        <h2 class="section-title" data-translate="projects_title">Yakunlangan loyihalar</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-label" data-translate="project1_label">Government</div>
+                <h3 class="project-title" data-translate="project1_title">[Davlat tashkiloti nomi] uchun axborot tizimi</h3>
+                <p class="project-meta" data-translate="project1_meta">Challenge: Integrated information management</p>
+                <p class="project-description" data-translate="project1_desc">Enterprise-grade information system with role-based access, real-time reporting, and secure data handling for government operations.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-label" data-translate="project2_label">Enterprise</div>
+                <h3 class="project-title" data-translate="project2_title">[Korporativ mijoz nomi] uchun avtomatlashtirish platformasi</h3>
+                <p class="project-meta" data-translate="project2_meta">Challenge: Process optimization</p>
+                <p class="project-description" data-translate="project2_desc">Comprehensive automation platform streamlining complex workflows, reducing manual operations, and improving organizational efficiency.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-label" data-translate="project3_label">Analytics</div>
+                <h3 class="project-title" data-translate="project3_title">[Tashkilot nomi] uchun tahliliy dashboard</h3>
+                <p class="project-meta" data-translate="project3_meta">Challenge: Data-driven decision making</p>
+                <p class="project-description" data-translate="project3_desc">Advanced analytics dashboard providing real-time insights, performance monitoring, and executive-level business intelligence.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-label" data-translate="project4_label">Integration</div>
+                <h3 class="project-title" data-translate="project4_title">[Hamkor nomi] uchun integratsiya yechimi</h3>
+                <p class="project-meta" data-translate="project4_meta">Challenge: System connectivity</p>
+                <p class="project-description" data-translate="project4_desc">Seamless integration solution connecting disparate systems, APIs, and databases into unified operational ecosystem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="partners">
+        <div class="section-label" data-translate="partners_label">HAMKORLAR</div>
+        <h2 class="section-title" data-translate="partners_title">Ishonchli hamkorlar</h2>
+        <p class="partners-intro" data-translate="partners_intro">IDSC davlat va nodavlat tashkilotlar bilan mas'uliyatli, uzoq muddatli va natijaga yo'naltirilgan hamkorlikni qadrlaydi.</p>
+        <div class="partners-grid">
+            <div class="partner-item">
+                <div class="partner-name" data-translate="partner1">Government Partner</div>
+            </div>
+            <div class="partner-item">
+                <div class="partner-name" data-translate="partner2">Enterprise Partner</div>
+            </div>
+            <div class="partner-item">
+                <div class="partner-name" data-translate="partner3">Technology Partner</div>
+            </div>
+            <div class="partner-item">
+                <div class="partner-name" data-translate="partner4">Integration Partner</div>
+            </div>
+            <div class="partner-item">
+                <div class="partner-name" data-translate="partner5">Strategic Partner</div>
+            </div>
+            <div class="partner-item">
+                <div class="partner-name" data-translate="partner6">Development Partner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+        <div class="section-label" data-translate="process_label">JARAYONI</div>
+        <h2 class="section-title" data-translate="process_title">Biz qanday ishlaymiz</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">1</div>
+                <h3 class="timeline-title" data-translate="step1_title">Tahlil</h3>
+                <p class="timeline-description" data-translate="step1_desc">Tashkilotning ehtiyojlarini chuqur o'rganish va texnik talablarni aniqlash.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">2</div>
+                <h3 class="timeline-title" data-translate="step2_title">Texnik topshiriq</h3>
+                <p class="timeline-description" data-translate="step2_desc">Batafsil texnik spetsifikatsiya va funktsional talablarni tayyorlash.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">3</div>
+                <h3 class="timeline-title" data-translate="step3_title">Arxitektura</h3>
+                <p class="timeline-description" data-translate="step3_desc">Xavfsizlik va masshtabilovchilikning asosida tizim arxitekturasini loyihalash.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">4</div>
+                <h3 class="timeline-title" data-translate="step4_title">Dizayn va ishlab chiqish</h3>
+                <p class="timeline-description" data-translate="step4_desc">Interfeys dizaynlash va tizimning yadrosini ishlab chiqish.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">5</div>
+                <h3 class="timeline-title" data-translate="step5_title">Test va xavfsizlik tekshiruvi</h3>
+                <p class="timeline-description" data-translate="step5_desc">Kompleks testing va xavfsizlik auditini o'tkazish.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">6</div>
+                <h3 class="timeline-title" data-translate="step6_title">Joriy etish</h3>
+                <p class="timeline-description" data-translate="step6_desc">Ishlab chiqilgan tizimni ishlatishga tayyorlash va joriylash.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">7</div>
+                <h3 class="timeline-title" data-translate="step7_title">Texnik qo'llab-quvvatlash</h3>
+                <p class="timeline-description" data-translate="step7_desc">Uzoq muddatli texnik qo'llab-quvvatlash va tizimni rivojlantirish.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="security">
+        <div class="section-label" data-translate="security_label">XAVFSIZLIK</div>
+        <h2 class="section-title" data-translate="security_title">Xavfsizlik, barqarorlik va mas'uliyat — har bir yechimimizning asosi</h2>
+        <div class="security-grid">
+            <div class="security-card">
+                <div class="security-icon"></div>
+                <h3 class="security-title" data-translate="sec1_title">Role-based Access Control</h3>
+                <p class="security-description" data-translate="sec1_desc">Granular permission management ensuring data access based on user roles and responsibilities.</p>
+            </div>
+            <div class="security-card">
+                <div class="security-icon"></div>
+                <h3 class="security-title" data-translate="sec2_title">Audit Logs</h3>
+                <p class="security-description" data-translate="sec2_desc">Complete activity tracking and monitoring for compliance, investigation, and accountability.</p>
+            </div>
+            <div class="security-card">
+                <div class="security-icon"></div>
+                <h3 class="security-title" data-translate="sec3_title">Data Protection</h3>
+                <p class="security-description" data-translate="sec3_desc">Enterprise-grade encryption and secure data handling protocols protecting sensitive information.</p>
+            </div>
+            <div class="security-card">
+                <div class="security-icon"></div>
+                <h3 class="security-title" data-translate="sec4_title">Secure API Integration</h3>
+                <p class="security-description" data-translate="sec4_desc">Protected communication channels and authentication mechanisms for safe system integration.</p>
+            </div>
+            <div class="security-card">
+                <div class="security-icon"></div>
+                <h3 class="security-title" data-translate="sec5_title">Scalable Architecture</h3>
+                <p class="security-description" data-translate="sec5_desc">Robust infrastructure designed for growth while maintaining security and performance standards.</p>
+            </div>
+            <div class="security-card">
+                <div class="security-icon"></div>
+                <h3 class="security-title" data-translate="sec6_title">24/7 Monitoring & Support</h3>
+                <p class="security-description" data-translate="sec6_desc">Continuous system monitoring and dedicated support ensuring maximum uptime and rapid issue resolution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIES -->
+    <section class="technologies">
+        <div class="section-label" data-translate="tech_label">TEXNOLOGIYALAR</div>
+        <h2 class="section-title" data-translate="tech_title">Foydalaniladigan texnologiyalar</h2>
+        <div class="tech-category">
+            <div class="tech-category-label" data-translate="tech_backend">Backend</div>
+            <div class="tech-tags">
+                <div class="tech-tag">Python</div>
+                <div class="tech-tag">FastAPI</div>
+                <div class="tech-tag">Django</div>
+                <div class="tech-tag">Node.js</div>
+            </div>
+        </div>
+        <div class="tech-category">
+            <div class="tech-category-label" data-translate="tech_frontend">Frontend</div>
+            <div class="tech-tags">
+                <div class="tech-tag">JavaScript</div>
+                <div class="tech-tag">HTML</div>
+                <div class="tech-tag">CSS</div>
+                <div class="tech-tag">React</div>
+            </div>
+        </div>
+        <div class="tech-category">
+            <div class="tech-category-label" data-translate="tech_database">Database</div>
+            <div class="tech-tags">
+                <div class="tech-tag">PostgreSQL</div>
+                <div class="tech-tag">MongoDB</div>
+                <div class="tech-tag">Redis</div>
+            </div>
+        </div>
+        <div class="tech-category">
+            <div class="tech-category-label" data-translate="tech_devops">DevOps</div>
+            <div class="tech-tags">
+                <div class="tech-tag">Docker</div>
+                <div class="tech-tag">Kubernetes</div>
+                <div class="tech-tag">Linux</div>
+                <div class="tech-tag">CI/CD</div>
+            </div>
+        </div>
+        <div class="tech-category">
+            <div class="tech-category-label" data-translate="tech_security">Security</div>
+            <div class="tech-tags">
+                <div class="tech-tag">SSL/TLS</div>
+                <div class="tech-tag">OAuth 2.0</div>
+                <div class="tech-tag">JWT</div>
+                <div class="tech-tag">Encryption</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section id="media" class="media">
+        <div class="section-label" data-translate="media_label">MEDIA</div>
+        <h2 class="section-title" data-translate="media_title">Yangiliklar va maqolalar</h2>
+        <div class="media-filters">
+            <button class="filter-btn active" data-filter="all" data-translate="filter_all">Barchasi</button>
+            <button class="filter-btn" data-filter="news" data-translate="filter_news">Yangiliklar</button>
+            <button class="filter-btn" data-filter="articles" data-translate="filter_articles">Maqolalar</button>
+            <button class="filter-btn" data-filter="projects" data-translate="filter_projects">Loyihalar</button>
+            <button class="filter-btn" data-filter="events" data-translate="filter_events">Tadbirlar</button>
+        </div>
+        <div class="media-grid">
+            <div class="media-card active" data-category="all news">
+                <div class="media-date">2026-05-20</div>
+                <div class="media-category" data-translate="cat_news">YANGILIKLAR</div>
+                <h3 class="media-title" data-translate="media1_title">IDSC yangi raqamli platforma ustida ish boshladi</h3>
+                <p class="media-description" data-translate="media1_desc">IDSC yangi dasturiy platformani rivojlantirishni boshladi, bu davlat tashkilotlari uchun qaror qabul qilish jarayonlarini yordamlik qiladi.</p>
+                <a href="#" class="read-more-link" data-translate="read_more">Ko'proq o'qish</a>
+            </div>
+            <div class="media-card active" data-category="all articles">
+                <div class="media-date">2026-05-15</div>
+                <div class="media-category" data-translate="cat_articles">MAQOLALAR</div>
+                <h3 class="media-title" data-translate="media2_title">Davlat tashkilotlari uchun axborot tizimlarida xavfsizlikning o'rni</h3>
+                <p class="media-description" data-translate="media2_desc">Modern davlat tashkilotlarida axborot tizimlarining xavfsizligi jahat asosiy muhim mas'alalardan biridir.</p>
+                <a href="#" class="read-more-link" data-translate="read_more">Ko'proq o'qish</a>
+            </div>
+            <div class="media-card active" data-category="all articles">
+                <div class="media-date">2026-05-10</div>
+                <div class="media-category" data-translate="cat_articles">MAQOLALAR</div>
+                <h3 class="media-title" data-translate="media3_title">Qaror qabul qilishda ma'lumotlar tahlilining ahamiyati</h3>
+                <p class="media-description" data-translate="media3_desc">Ma'lumotlar tahlili boshqaruv qarorlarining samaradorligini oshirishda katta rol o'ynaydi.</p>
+                <a href="#" class="read-more-link" data-translate="read_more">Ko'proq o'qish</a>
+            </div>
+            <div class="media-card active" data-category="all projects">
+                <div class="media-date">2026-05-05</div>
+                <div class="media-category" data-translate="cat_projects">LOYIHALAR</div>
+                <h3 class="media-title" data-translate="media4_title">Integratsiya yechimlari orqali boshqaruv samaradorligini oshirish</h3>
+                <p class="media-description" data-translate="media4_desc">Tizimlar integratsiyasi tashkilotlarning ish samaradorligini 40% gacha oshirishi mumkin.</p>
+                <a href="#" class="read-more-link" data-translate="read_more">Ko'proq o'qish</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="contact-cta" data-translate="contact_cta">Loyihangizni muhokama qilish uchun biz bilan bog'laning.</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3 data-translate="contact_info_title">Biz bilan bog'laning</h3>
+                <div class="contact-item">
+                    <div class="contact-label" data-translate="contact_phone">Telefon</div>
+                    <div class="contact-value">+998 (XX) XXX-XX-XX</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label" data-translate="contact_email">Elektron pochta</div>
+                    <div class="contact-value">info@idsc.uz</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label" data-translate="contact_address">Manzil</div>
+                    <div class="contact-value">Tashkent, Uzbekistan</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label" data-translate="contact_hours">Ish vaqti</div>
+                    <div class="contact-value">Dushanba - Juma: 09:00 - 18:00</div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name" data-translate="form_name">Ism-sharif</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="organization" data-translate="form_org">Tashkilot</label>
+                    <input type="text" id="organization" name="organization">
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-translate="form_phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email" data-translate="form_email">Elektron pochta</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service" data-translate="form_service">Xizmat turi</label>
+                    <select id="service" name="service">
+                        <option data-translate="service_select">Xizmat turini tanlang</option>
+                        <option data-translate="service_soft">Dasturiy ta'minot ishlab chiqish</option>
+                        <option data-translate="service_info">Axborot tizimi</option>
+                        <option data-translate="service_auto">Avtomatlashtirish</option>
+                        <option data-translate="service_int">Integratsiya</option>
+                        <option data-translate="service_ana">Tahliliy dasturiy ta'minot</option>
+                        <option data-translate="service_cons">IT konsalting</option>
+                        <option data-translate="service_other">Boshqa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message" data-translate="form_message">Xabar</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="form-submit" data-translate="form_submit">Yuborish</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>IDSC</h3>
+                <p data-translate="footer_desc">Information and Decision Support Center — davlat va korporativ sektor uchun raqamli yechimlar, axborot tizimlari va qaror qabul qilishni qo'llab-quvvatlovchi platformalar ishlab chiqadi.</p>
+            </div>
+            <div class="footer-column">
+                <h3 data-translate="footer_services">Xizmatlar</h3>
+                <div class="footer-links">
+                    <a href="#services" data-translate="footer_service1">Dasturiy ta'minot</a>
+                    <a href="#services" data-translate="footer_service2">Axborot tizimlari</a>
+                    <a href="#services" data-translate="footer_service3">Avtomatlashtirish</a>
+                    <a href="#services" data-translate="footer_service4">IT konsalting</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 data-translate="footer_company">Kompaniya</h3>
+                <div class="footer-links">
+                    <a href="#about" data-translate="footer_about">Biz haqimizda</a>
+                    <a href="#projects" data-translate="footer_projects">Loyihalar</a>
+                    <a href="#contact" data-translate="footer_contact">Aloqa</a>
+                    <a href="#" data-translate="footer_privacy">Maxfiylik siyosati</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 data-translate="footer_contact_title">Aloqa</h3>
+                <div class="footer-links">
+                    <a href="tel:+998" data-translate="footer_phone">Telefon</a>
+                    <a href="mailto:info@idsc.uz" data-translate="footer_email">Elektron pochta</a>
+                    <a href="#" data-translate="footer_social">Ijtimoiy tarmoq</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-translate="footer_copyright">© 2026 IDSC — Information and Decision Support Center. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== TRANSLATIONS =====
+        const translations = {
+            uz: {
+                nav_home: "Bosh sahifa",
+                nav_about: "Biz haqimizda",
+                nav_services: "Xizmatlar",
+                nav_projects: "Loyihalar",
+                nav_partners: "Hamkorlar",
+                nav_media: "Media",
+                nav_contact: "Aloqa",
+                header_cta: "Konsultatsiya olish",
+                hero_label: "AXBOROT VA QAROR QABUL QILISH MARKAZI",
+                hero_title: "IDSC — raqamli transformatsiya va qaror qabul qilish tizimlari markazi",
+                hero_paragraph: "Davlat va nodavlat tashkilotlar uchun xavfsiz, barqaror va samarali IT yechimlar yaratamiz. Axborot tizimlari, avtomatlashtirish, integratsiya, tahlil va qaror qabul qilishni qo'llab-quvvatlovchi platformalarni ishlab chiqamiz.",
+                hero_btn1: "Xizmatlarimiz",
+                hero_btn2: "Loyihalarni ko'rish",
+                badge1: "Davlat va korporativ sektor",
+                badge2: "Xavfsiz arxitektura",
+                badge3: "Barqaror integratsiya",
+                visual_label1: "Qaror qabul qilish",
+                visual_label2: "Raqamli tizimlar",
+                visual_label3: "Xavfsiz integratsiya",
+                trust1: "Davlat tashkilotlari bilan ishlash tajribasi",
+                trust2: "Korporativ IT yechimlar",
+                trust3: "Xavfsizlikka yo'naltirilgan arxitektura",
+                trust4: "Ma'lumotlarga asoslangan boshqaruv",
+                about_label: "BIZ HAQIMIZDA",
+                about_title: "Information and Decision Support Center",
+                about_intro: "IDSC — davlat va nodavlat tashkilotlar uchun zamonaviy axborot tizimlari, avtomatlashtirish platformalari, analitik dashboardlar va qaror qabul qilishni qo'llab-quvvatlovchi IT yechimlarni ishlab chiqishga ixtisoslashgan kompaniya.",
+                about_card1_label: "MISSIYA",
+                about_card1_title: "Missiya",
+                about_card1_text: "Tashkilotlarning raqamli jarayonlarini soddalashtirish, tezlashtirish va ishonchli boshqaruv tizimlarini yaratish.",
+                about_card2_label: "VIZYON",
+                about_card2_title: "Vizyon",
+                about_card2_text: "Texnologiya, ma'lumot va tajribaga tayangan holda samarali boshqaruv va tahliliy qarorlar ekotizimini rivojlantirish.",
+                about_card3_label: "QIYMATLAR",
+                about_card3_title: "Qiymatlar",
+                about_card3_text: "Ishonchlilik, xavfsizlik, aniqlik, mas'uliyat va uzoq muddatli hamkorlik.",
+                stat1: "Yillik tajriba",
+                stat2: "Yakunlangan loyiha",
+                stat3: "Hamkor tashkilot",
+                stat4: "Joriy etilgan tizim",
+                services_label: "XIZMATLAR",
+                services_title: "Biz taklif qiladigan xizmatlar",
+                service1_title: "Maxsus dasturiy ta'minot ishlab chiqish",
+                service1_desc: "Tashkilot ehtiyojlariga mos web-platformalar, ichki tizimlar, boshqaruv panellari va maxsus biznes ilovalar yaratamiz.",
+                service2_title: "Axborot tizimlarini ishlab chiqish",
+                service2_desc: "Davlat va korporativ tuzilmalar uchun rollar, jarayonlar, hisobotlar va integratsiyalar bilan ishlaydigan tizimlar yaratamiz.",
+                service3_title: "Qaror qabul qilishni qo'llab-quvvatlovchi tizimlar",
+                service3_desc: "Tahlil, monitoring, ko'rsatkichlar va boshqaruv uchun qarorlarni qo'llab-quvvatlovchi platformalar ishlab chiqamiz.",
+                service4_title: "Jarayonlarni avtomatlashtirish",
+                service4_desc: "Murakkab va qo'lda bajariladigan ish jarayonlarini raqamlashtiramiz va optimallashtiramiz.",
+                service5_title: "Ma'lumotlar tahlili va dashboardlar",
+                service5_desc: "Rahbariyat va mutaxassislar uchun ma'lumotlarni ko'rish, tahlil qilish va kuzatish vositalarini yaratamiz.",
+                service6_title: "Tizimlar integratsiyasi",
+                service6_desc: "Ichki tizimlar, API, ma'lumotlar bazalari va tashqi servislarni yagona ekotizimga bog'laymiz.",
+                service7_title: "Xavfsizlikka yo'naltirilgan arxitektura",
+                service7_desc: "Ruxsatlar, audit loglar, autentifikatsiya va himoyalangan ma'lumot almashinuvi asosida tizimlar quramiz.",
+                service8_title: "IT konsalting va texnik ekspertiza",
+                service8_desc: "Texnik arxitektura, raqamlashtirish strategiyasi, tizim tanlovi va rivojlantirish bo'yicha ekspert yondashuvni taklif qilamiz.",
+                projects_label: "LOYIHALAR",
+                projects_title: "Yakunlangan loyihalar",
+                project1_label: "Davlat",
+                project1_title: "[Davlat tashkiloti nomi] uchun axborot tizimi",
+                project1_meta: "Challenge: Integrated information management",
+                project1_desc: "Enterprise-grade information system with role-based access, real-time reporting, and secure data handling for government operations.",
+                project2_label: "Korporativ",
+                project2_title: "[Korporativ mijoz nomi] uchun avtomatlashtirish platformasi",
+                project2_meta: "Challenge: Process optimization",
+                project2_desc: "Comprehensive automation platform streamlining complex workflows, reducing manual operations, and improving organizational efficiency.",
+                project3_label: "Tahliliy",
+                project3_title: "[Tashkilot nomi] uchun tahliliy dashboard",
+                project3_meta: "Challenge: Data-driven decision making",
+                project3_desc: "Advanced analytics dashboard providing real-time insights, performance monitoring, and executive-level business intelligence.",
+                project4_label: "Integratsiya",
+                project4_title: "[Hamkor nomi] uchun integratsiya yechimi",
+                project4_meta: "Challenge: System connectivity",
+                project4_desc: "Seamless integration solution connecting disparate systems, APIs, and databases into unified operational ecosystem.",
+                partners_label: "HAMKORLAR",
+                partners_title: "Ishonchli hamkorlar",
+                partners_intro: "IDSC davlat va nodavlat tashkilotlar bilan mas'uliyatli, uzoq muddatli va natijaga yo'naltirilgan hamkorlikni qadrlaydi.",
+                partner1: "Davlat hamkori",
+                partner2: "Korporativ hamkori",
+                partner3: "Texnologiya hamkori",
+                partner4: "Integratsiya hamkori",
+                partner5: "Strategik hamkori",
+                partner6: "Rivojlantirish hamkori",
+                process_label: "JARAYONI",
+                process_title: "Biz qanday ishlaymiz",
+                step1_title: "Tahlil",
+                step1_desc: "Tashkilotning ehtiyojlarini chuqur o'rganish va texnik talablarni aniqlash.",
+                step2_title: "Texnik topshiriq",
+                step2_desc: "Batafsil texnik spetsifikatsiya va funktsional talablarni tayyorlash.",
+                step3_title: "Arxitektura",
+                step3_desc: "Xavfsizlik va masshtabilovchilikning asosida tizim arxitekturasini loyihalash.",
+                step4_title: "Dizayn va ishlab chiqish",
+                step4_desc: "Interfeys dizaynlash va tizimning yadrosini ishlab chiqish.",
+                step5_title: "Test va xavfsizlik tekshiruvi",
+                step5_desc: "Kompleks testing va xavfsizlik auditini o'tkazish.",
+                step6_title: "Joriy etish",
+                step6_desc: "Ishlab chiqilgan tizimni ishlatishga tayyorlash va joriylash.",
+                step7_title: "Texnik qo'llab-quvvatlash",
+                step7_desc: "Uzoq muddatli texnik qo'llab-quvvatlash va tizimni rivojlantirish.",
+                security_label: "XAVFSIZLIK",
+                security_title: "Xavfsizlik, barqarorlik va mas'uliyat — har bir yechimimizning asosi",
+                sec1_title: "Role-based Access Control",
+                sec1_desc: "Granular permission management ensuring data access based on user roles and responsibilities.",
+                sec2_title: "Audit Logs",
+                sec2_desc: "Complete activity tracking and monitoring for compliance, investigation, and accountability.",
+                sec3_title: "Data Protection",
+                sec3_desc: "Enterprise-grade encryption and secure data handling protocols protecting sensitive information.",
+                sec4_title: "Secure API Integration",
+                sec4_desc: "Protected communication channels and authentication mechanisms for safe system integration.",
+                sec5_title: "Scalable Architecture",
+                sec5_desc: "Robust infrastructure designed for growth while maintaining security and performance standards.",
+                sec6_title: "24/7 Monitoring & Support",
+                sec6_desc: "Continuous system monitoring and dedicated support ensuring maximum uptime and rapid issue resolution.",
+                tech_label: "TEXNOLOGIYALAR",
+                tech_title: "Foydalaniladigan texnologiyalar",
+                tech_backend: "Backend",
+                tech_frontend: "Frontend",
+                tech_database: "Database",
+                tech_devops: "DevOps",
+                tech_security: "Xavfsizlik",
+                media_label: "MEDIA",
+                media_title: "Yangiliklar va maqolalar",
+                filter_all: "Barchasi",
+                filter_news: "Yangiliklar",
+                filter_articles: "Maqolalar",
+                filter_projects: "Loyihalar",
+                filter_events: "Tadbirlar",
+                cat_news: "YANGILIKLAR",
+                cat_articles: "MAQOLALAR",
+                cat_projects: "LOYIHALAR",
+                cat_events: "TADBIRLAR",
+                media1_title: "IDSC yangi raqamli platforma ustida ish boshladi",
+                media1_desc: "IDSC yangi dasturiy platformani rivojlantirishni boshladi, bu davlat tashkilotlari uchun qaror qabul qilish jarayonlarini yordamlik qiladi.",
+                media2_title: "Davlat tashkilotlari uchun axborot tizimlarida xavfsizlikning o'rni",
+                media2_desc: "Modern davlat tashkilotlarida axborot tizimlarining xavfsizligi jahat asosiy muhim mas'alalardan biridir.",
+                media3_title: "Qaror qabul qilishda ma'lumotlar tahlilining ahamiyati",
+                media3_desc: "Ma'lumotlar tahlili boshqaruv qarorlarining samaradorligini oshirishda katta rol o'ynaydi.",
+                media4_title: "Integratsiya yechimlari orqali boshqaruv samaradorligini oshirish",
+                media4_desc: "Tizimlar integratsiyasi tashkilotlarning ish samaradorligini 40% gacha oshirishi mumkin.",
+                read_more: "Ko'proq o'qish",
+                contact_cta: "Loyihangizni muhokama qilish uchun biz bilan bog'laning.",
+                contact_info_title: "Biz bilan bog'laning",
+                contact_phone: "Telefon",
+                contact_email: "Elektron pochta",
+                contact_address: "Manzil",
+                contact_hours: "Ish vaqti",
+                form_name: "Ism-sharif",
+                form_org: "Tashkilot",
+                form_phone: "Telefon",
+                form_email: "Elektron pochta",
+                form_service: "Xizmat turi",
+                form_message: "Xabar",
+                form_submit: "Yuborish",
+                service_select: "Xizmat turini tanlang",
+                service_soft: "Dasturiy ta'minot ishlab chiqish",
+                service_info: "Axborot tizimi",
+                service_auto: "Avtomatlashtirish",
+                service_int: "Integratsiya",
+                service_ana: "Tahliliy dasturiy ta'minot",
+                service_cons: "IT konsalting",
+                service_other: "Boshqa",
+                footer_desc: "Information and Decision Support Center — davlat va korporativ sektor uchun raqamli yechimlar, axborot tizimlari va qaror qabul qilishni qo'llab-quvvatlovchi platformalar ishlab chiqadi.",
+                footer_services: "Xizmatlar",
+                footer_service1: "Dasturiy ta'minot",
+                footer_service2: "Axborot tizimlari",
+                footer_service3: "Avtomatlashtirish",
+                footer_service4: "IT konsalting",
+                footer_company: "Kompaniya",
+                footer_about: "Biz haqimizda",
+                footer_projects: "Loyihalar",
+                footer_contact: "Aloqa",
+                footer_privacy: "Maxfiylik siyosati",
+                footer_contact_title: "Aloqa",
+                footer_phone: "Telefon",
+                footer_email: "Elektron pochta",
+                footer_social: "Ijtimoiy tarmoq",
+                footer_copyright: "© 2026 IDSC — Information and Decision Support Center. All rights reserved."
+            },
+            ru: {
+                nav_home: "Главная",
+                nav_about: "О нас",
+                nav_services: "Услуги",
+                nav_projects: "Проекты",
+                nav_partners: "Партнеры",
+                nav_media: "Медиа",
+                nav_contact: "Контакты",
+                header_cta: "Получить консультацию",
+                hero_label: "ИНФОРМАЦИЯ И ЦЕНТР ПОДДЕРЖКИ РЕШЕНИЙ",
+                hero_title: "IDSC — центр цифровой трансформации и систем поддержки принятия решений",
+                hero_paragraph: "Мы создаем безопасные, надежные и эффективные IT-решения для государственных и частных организаций. Разрабатываем информационные системы, автоматизацию, интеграцию, аналитику и платформы поддержки принятия решений.",
+                hero_btn1: "Наши услуги",
+                hero_btn2: "Посмотреть проекты",
+                badge1: "Государственный и корпоративный сектор",
+                badge2: "Безопасная архитектура",
+                badge3: "Надежная интеграция",
+                visual_label1: "Поддержка решений",
+                visual_label2: "Цифровые системы",
+                visual_label3: "Безопасная интеграция",
+                trust1: "Опыт работы с государственными организациями",
+                trust2: "Корпоративные IT-решения",
+                trust3: "Архитектура, ориентированная на безопасность",
+                trust4: "Управление на основе данных",
+                about_label: "О НАС",
+                about_title: "Information and Decision Support Center",
+                about_intro: "IDSC — компания, специализирующаяся на разработке современных информационных систем, платформ автоматизации, аналитических приборных панелей и IT-решений поддержки принятия решений для государственных и частных организаций.",
+                about_card1_label: "МИССИЯ",
+                about_card1_title: "Миссия",
+                about_card1_text: "Упростить, ускорить цифровые процессы организаций и создать надежные системы управления.",
+                about_card2_label: "ВИДЕНИЕ",
+                about_card2_title: "Видение",
+                about_card2_text: "Развивать экосистему эффективного управления и аналитических решений на основе технологии, данных и опыта.",
+                about_card3_label: "ЦЕННОСТИ",
+                about_card3_title: "Ценности",
+                about_card3_text: "Надежность, безопасность, точность, ответственность и долгосрочное партнерство.",
+                stat1: "Лет опыта",
+                stat2: "Завершенных проектов",
+                stat3: "Партнерских организаций",
+                stat4: "Развернутых систем",
+                services_label: "УСЛУГИ",
+                services_title: "Предлагаемые услуги",
+                service1_title: "Разработка специального программного обеспечения",
+                service1_desc: "Создаем веб-платформы, внутренние системы, панели управления и специальные бизнес-приложения в соответствии с потребностями организации.",
+                service2_title: "Разработка информационных систем",
+                service2_desc: "Создаем системы с ролями, процессами, отчетами и интеграцией для государственных и корпоративных структур.",
+                service3_title: "Системы поддержки принятия решений",
+                service3_desc: "Разрабатываем платформы поддержки решений для анализа, мониторинга, показателей и управления.",
+                service4_title: "Автоматизация процессов",
+                service4_desc: "Оцифровываем и оптимизируем сложные и ручные бизнес-процессы.",
+                service5_title: "Анализ данных и приборные панели",
+                service5_desc: "Создаем инструменты просмотра, анализа и мониторинга данных для руководства и специалистов.",
+                service6_title: "Интеграция систем",
+                service6_desc: "Объединяем внутренние системы, API, базы данных и внешние услуги в единую экосистему.",
+                service7_title: "Архитектура, ориентированная на безопасность",
+                service7_desc: "Строим системы на основе разрешений, журналов аудита, аутентификации и защищенного обмена данными.",
+                service8_title: "IT консультирование и техническая экспертиза",
+                service8_desc: "Предлагаем экспертный подход к технической архитектуре, стратегии цифровизации, выбору системы и разработке.",
+                projects_label: "ПРОЕКТЫ",
+                projects_title: "Завершенные проекты",
+                project1_label: "Государство",
+                project1_title: "[Название государственной организации] информационная система",
+                project1_meta: "Challenge: Integrated information management",
+                project1_desc: "Enterprise-grade information system with role-based access, real-time reporting, and secure data handling for government operations.",
+                project2_label: "Корпоративный",
+                project2_title: "[Корпоративный клиент] платформа автоматизации",
+                project2_meta: "Challenge: Process optimization",
+                project2_desc: "Comprehensive automation platform streamlining complex workflows, reducing manual operations, and improving organizational efficiency.",
+                project3_label: "Аналитика",
+                project3_title: "[Название организации] аналитическая приборная панель",
+                project3_meta: "Challenge: Data-driven decision making",
+                project3_desc: "Advanced analytics dashboard providing real-time insights, performance monitoring, and executive-level business intelligence.",
+                project4_label: "Интеграция",
+                project4_title: "[Название партнера] решение интеграции",
+                project4_meta: "Challenge: System connectivity",
+                project4_desc: "Seamless integration solution connecting disparate systems, APIs, and databases into unified operational ecosystem.",
+                partners_label: "ПАРТНЕРЫ",
+                partners_title: "Надежные партнеры",
+                partners_intro: "IDSC ценит ответственное, долгосрочное и результативное партнерство с государственными и частными организациями.",
+                partner1: "Государственный партнер",
+                partner2: "Корпоративный партнер",
+                partner3: "Технологический партнер",
+                partner4: "Партнер интеграции",
+                partner5: "Стратегический партнер",
+                partner6: "Партнер разработки",
+                process_label: "ПРОЦЕСС",
+                process_title: "Как мы работаем",
+                step1_title: "Анализ",
+                step1_desc: "Глубокое изучение потребностей организации и определение технических требований.",
+                step2_title: "Техническое задание",
+                step2_desc: "Подготовка детальной технической спецификации и функциональных требований.",
+                step3_title: "Архитектура",
+                step3_desc: "Проектирование архитектуры системы на основе безопасности и масштабируемости.",
+                step4_title: "Дизайн и разработка",
+                step4_desc: "Дизайн интерфейса и разработка ядра системы.",
+                step5_title: "Тестирование и проверка безопасности",
+                step5_desc: "Проведение комплексного тестирования и аудита безопасности.",
+                step6_title: "Развертывание",
+                step6_desc: "Подготовка разработанной системы к использованию и развертыванию.",
+                step7_title: "Техническая поддержка",
+                step7_desc: "Долгосрочная техническая поддержка и развитие системы.",
+                security_label: "БЕЗОПАСНОСТЬ",
+                security_title: "Безопасность, надежность и ответственность — основа каждого нашего решения",
+                sec1_title: "Role-based Access Control",
+                sec1_desc: "Granular permission management ensuring data access based on user roles and responsibilities.",
+                sec2_title: "Audit Logs",
+                sec2_desc: "Complete activity tracking and monitoring for compliance, investigation, and accountability.",
+                sec3_title: "Data Protection",
+                sec3_desc: "Enterprise-grade encryption and secure data handling protocols protecting sensitive information.",
+                sec4_title: "Secure API Integration",
+                sec4_desc: "Protected communication channels and authentication mechanisms for safe system integration.",
+                sec5_title: "Scalable Architecture",
+                sec5_desc: "Robust infrastructure designed for growth while maintaining security and performance standards.",
+                sec6_title: "24/7 Monitoring & Support",
+                sec6_desc: "Continuous system monitoring and dedicated support ensuring maximum uptime and rapid issue resolution.",
+                tech_label: "ТЕХНОЛОГИИ",
+                tech_title: "Используемые технологии",
+                tech_backend: "Backend",
+                tech_frontend: "Frontend",
+                tech_database: "Database",
+                tech_devops: "DevOps",
+                tech_security: "Безопасность",
+                media_label: "МЕДИА",
+                media_title: "Новости и статьи",
+                filter_all: "Все",
+                filter_news: "Новости",
+                filter_articles: "Статьи",
+                filter_projects: "Проекты",
+                filter_events: "События",
+                cat_news: "НОВОСТИ",
+                cat_articles: "СТАТЬИ",
+                cat_projects: "ПРОЕКТЫ",
+                cat_events: "СОБЫТИЯ",
+                media1_title: "IDSC начала работу над новой цифровой платформой",
+                media1_desc: "IDSC начала разработку новой программной платформы, которая поддержит процессы принятия решений государственными организациями.",
+                media2_title: "Роль безопасности в информационных системах государственных организаций",
+                media2_desc: "Безопасность информационных систем является одним из наиболее критических вопросов в современных государственных организациях.",
+                media3_title: "Значимость анализа данных в принятии решений",
+                media3_desc: "Анализ данных играет решающую роль в повышении эффективности управленческих решений.",
+                media4_title: "Повышение эффективности управления с помощью решений интеграции",
+                media4_desc: "Интеграция систем может повысить эффективность работы организаций на 40%.",
+                read_more: "Читать далее",
+                contact_cta: "Обсудите ваш проект с нами.",
+                contact_info_title: "Свяжитесь с нами",
+                contact_phone: "Телефон",
+                contact_email: "Электронная почта",
+                contact_address: "Адрес",
+                contact_hours: "Часы работы",
+                form_name: "ФИО",
+                form_org: "Организация",
+                form_phone: "Телефон",
+                form_email: "Электронная почта",
+                form_service: "Тип услуги",
+                form_message: "Сообщение",
+                form_submit: "Отправить",
+                service_select: "Выберите тип услуги",
+                service_soft: "Разработка программного обеспечения",
+                service_info: "Информационная система",
+                service_auto: "Автоматизация",
+                service_int: "Интеграция",
+                service_ana: "Аналитический софт",
+                service_cons: "IT консультирование",
+                service_other: "Другое",
+                footer_desc: "Information and Decision Support Center — разрабатывает цифровые решения, информационные системы и платформы поддержки принятия решений для государственного и корпоративного секторов.",
+                footer_services: "Услуги",
+                footer_service1: "Программное обеспечение",
+                footer_service2: "Информационные системы",
+                footer_service3: "Автоматизация",
+                footer_service4: "IT консультирование",
+                footer_company: "Компания",
+                footer_about: "О нас",
+                footer_projects: "Проекты",
+                footer_contact: "Контакты",
+                footer_privacy: "Политика конфиденциальности",
+                footer_contact_title: "Контакты",
+                footer_phone: "Телефон",
+                footer_email: "Электронная почта",
+                footer_social: "Социальные сети",
+                footer_copyright: "© 2026 IDSC — Information and Decision Support Center. All rights reserved."
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About",
+                nav_services: "Services",
+                nav_projects: "Projects",
+                nav_partners: "Partners",
+                nav_media: "Media",
+                nav_contact: "Contact",
+                header_cta: "Get Consultation",
+                hero_label: "INFORMATION AND DECISION SUPPORT CENTER",
+                hero_title: "IDSC — Digital Transformation and Decision Support Systems Center",
+                hero_paragraph: "We create secure, reliable, and efficient IT solutions for government and private organizations. We develop information systems, automation platforms, integration, analytics, and decision support platforms.",
+                hero_btn1: "Our Services",
+                hero_btn2: "View Projects",
+                badge1: "Government and Corporate Sector",
+                badge2: "Secure Architecture",
+                badge3: "Reliable Integration",
+                visual_label1: "Decision Support",
+                visual_label2: "Digital Systems",
+                visual_label3: "Secure Integration",
+                trust1: "Experience working with government organizations",
+                trust2: "Corporate IT Solutions",
+                trust3: "Security-focused architecture",
+                trust4: "Data-driven management",
+                about_label: "ABOUT US",
+                about_title: "Information and Decision Support Center",
+                about_intro: "IDSC is a company specializing in developing modern information systems, automation platforms, analytical dashboards, and IT solutions for supporting decision-making in government and private organizations.",
+                about_card1_label: "MISSION",
+                about_card1_title: "Mission",
+                about_card1_text: "Simplify and accelerate digital processes of organizations and create reliable management systems.",
+                about_card2_label: "VISION",
+                about_card2_title: "Vision",
+                about_card2_text: "Develop an ecosystem of effective management and analytical solutions based on technology, data, and experience.",
+                about_card3_label: "VALUES",
+                about_card3_title: "Values",
+                about_card3_text: "Reliability, security, accuracy, responsibility, and long-term partnership.",
+                stat1: "Years of Experience",
+                stat2: "Completed Projects",
+                stat3: "Partner Organizations",
+                stat4: "Deployed Systems",
+                services_label: "SERVICES",
+                services_title: "Services We Offer",
+                service1_title: "Custom Software Development",
+                service1_desc: "We create web platforms, internal systems, control panels, and custom business applications tailored to organizational needs.",
+                service2_title: "Information Systems Development",
+                service2_desc: "We develop systems with roles, processes, reports, and integration for government and corporate structures.",
+                service3_title: "Decision Support Systems",
+                service3_desc: "We develop platforms that support decision-making through analysis, monitoring, metrics, and management.",
+                service4_title: "Process Automation",
+                service4_desc: "We digitize and optimize complex and manual business processes.",
+                service5_title: "Data Analytics and Dashboards",
+                service5_desc: "We create tools for viewing, analyzing, and monitoring data for management and specialists.",
+                service6_title: "System Integration",
+                service6_desc: "We integrate internal systems, APIs, databases, and external services into a single ecosystem.",
+                service7_title: "Security-Focused Architecture",
+                service7_desc: "We build systems based on permissions, audit logs, authentication, and secure data exchange.",
+                service8_title: "IT Consulting and Technical Expertise",
+                service8_desc: "We offer expert guidance on technical architecture, digitization strategy, system selection, and development.",
+                projects_label: "PROJECTS",
+                projects_title: "Completed Projects",
+                project1_label: "Government",
+                project1_title: "[Government Organization Name] Information System",
+                project1_meta: "Challenge: Integrated information management",
+                project1_desc: "Enterprise-grade information system with role-based access, real-time reporting, and secure data handling for government operations.",
+                project2_label: "Enterprise",
+                project2_title: "[Corporate Client Name] Automation Platform",
+                project2_meta: "Challenge: Process optimization",
+                project2_desc: "Comprehensive automation platform streamlining complex workflows, reducing manual operations, and improving organizational efficiency.",
+                project3_label: "Analytics",
+                project3_title: "[Organization Name] Analytics Dashboard",
+                project3_meta: "Challenge: Data-driven decision making",
+                project3_desc: "Advanced analytics dashboard providing real-time insights, performance monitoring, and executive-level business intelligence.",
+                project4_label: "Integration",
+                project4_title: "[Partner Name] Integration Solution",
+                project4_meta: "Challenge: System connectivity",
+                project4_desc: "Seamless integration solution connecting disparate systems, APIs, and databases into unified operational ecosystem.",
+                partners_label: "PARTNERS",
+                partners_title: "Trusted Partners",
+                partners_intro: "IDSC values responsible, long-term, and results-oriented partnerships with government and private organizations.",
+                partner1: "Government Partner",
+                partner2: "Corporate Partner",
+                partner3: "Technology Partner",
+                partner4: "Integration Partner",
+                partner5: "Strategic Partner",
+                partner6: "Development Partner",
+                process_label: "PROCESS",
+                process_title: "How We Work",
+                step1_title: "Analysis",
+                step1_desc: "In-depth study of organizational needs and identification of technical requirements.",
+                step2_title: "Technical Specification",
+                step2_desc: "Preparation of detailed technical specification and functional requirements.",
+                step3_title: "Architecture",
+                step3_desc: "System architecture design based on security and scalability principles.",
+                step4_title: "Design and Development",
+                step4_desc: "Interface design and development of the system core.",
+                step5_title: "Testing and Security Review",
+                step5_desc: "Comprehensive testing and security audit.",
+                step6_title: "Deployment",
+                step6_desc: "Preparation of developed system for use and deployment.",
+                step7_title: "Technical Support",
+                step7_desc: "Long-term technical support and system development.",
+                security_label: "SECURITY",
+                security_title: "Security, Reliability, and Responsibility — The Foundation of Every Solution",
+                sec1_title: "Role-based Access Control",
+                sec1_desc: "Granular permission management ensuring data access based on user roles and responsibilities.",
+                sec2_title: "Audit Logs",
+                sec2_desc: "Complete activity tracking and monitoring for compliance, investigation, and accountability.",
+                sec3_title: "Data Protection",
+                sec3_desc: "Enterprise-grade encryption and secure data handling protocols protecting sensitive information.",
+                sec4_title: "Secure API Integration",
+                sec4_desc: "Protected communication channels and authentication mechanisms for safe system integration.",
+                sec5_title: "Scalable Architecture",
+                sec5_desc: "Robust infrastructure designed for growth while maintaining security and performance standards.",
+                sec6_title: "24/7 Monitoring & Support",
+                sec6_desc: "Continuous system monitoring and dedicated support ensuring maximum uptime and rapid issue resolution.",
+                tech_label: "TECHNOLOGIES",
+                tech_title: "Technologies Used",
+                tech_backend: "Backend",
+                tech_frontend: "Frontend",
+                tech_database: "Database",
+                tech_devops: "DevOps",
+                tech_security: "Security",
+                media_label: "MEDIA",
+                media_title: "News and Articles",
+                filter_all: "All",
+                filter_news: "News",
+                filter_articles: "Articles",
+                filter_projects: "Projects",
+                filter_events: "Events",
+                cat_news: "NEWS",
+                cat_articles: "ARTICLES",
+                cat_projects: "PROJECTS",
+                cat_events: "EVENTS",
+                media1_title: "IDSC Started Work on New Digital Platform",
+                media1_desc: "IDSC began development of a new software platform to support decision-making processes in government organizations.",
+                media2_title: "The Role of Security in Government Information Systems",
+                media2_desc: "Information system security is one of the most critical issues in modern government organizations.",
+                media3_title: "The Importance of Data Analysis in Decision Making",
+                media3_desc: "Data analysis plays a crucial role in improving the effectiveness of management decisions.",
+                media4_title: "Improving Management Efficiency with Integration Solutions",
+                media4_desc: "System integration can increase organizational efficiency by up to 40%.",
+                read_more: "Read More",
+                contact_cta: "Discuss your project with us.",
+                contact_info_title: "Get in Touch",
+                contact_phone: "Phone",
+                contact_email: "Email",
+                contact_address: "Address",
+                contact_hours: "Business Hours",
+                form_name: "Full Name",
+                form_org: "Organization",
+                form_phone: "Phone",
+                form_email: "Email",
+                form_service: "Service Type",
+                form_message: "Message",
+                form_submit: "Submit",
+                service_select: "Select service type",
+                service_soft: "Software Development",
+                service_info: "Information System",
+                service_auto: "Automation",
+                service_int: "Integration",
+                service_ana: "Analytics Software",
+                service_cons: "IT Consulting",
+                service_other: "Other",
+                footer_desc: "Information and Decision Support Center develops digital solutions, information systems, and decision support platforms for government and corporate sectors.",
+                footer_services: "Services",
+                footer_service1: "Software",
+                footer_service2: "Information Systems",
+                footer_service3: "Automation",
+                footer_service4: "IT Consulting",
+                footer_company: "Company",
+                footer_about: "About",
+                footer_projects: "Projects",
+                footer_contact: "Contact",
+                footer_privacy: "Privacy Policy",
+                footer_contact_title: "Contact",
+                footer_phone: "Phone",
+                footer_email: "Email",
+                footer_social: "Social Media",
+                footer_copyright: "© 2026 IDSC — Information and Decision Support Center. All rights reserved."
+            }
+        };
+
+        // ===== PRELOADER =====
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            const messages = [
+                'Initializing secure digital environment...',
+                'Preparing enterprise systems...',
+                'Loading digital infrastructure...'
+            ];
+            let messageIndex = 0;
+            const preloaderText = document.getElementById('preloaderText');
+
+            const messageInterval = setInterval(() => {
+                messageIndex = (messageIndex + 1) % messages.length;
+                preloaderText.textContent = messages[messageIndex];
+            }, 600);
+
+            setTimeout(() => {
+                clearInterval(messageInterval);
+                preloader.classList.add('hidden');
+            }, 2200);
+        });
+
+        // ===== HEADER SCROLL =====
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ===== HAMBURGER MENU =====
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // ===== LANGUAGE SWITCHER =====
+        let currentLanguage = 'uz';
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                if (lang !== currentLanguage) {
+                    currentLanguage = lang;
+                    updateLanguage(lang);
+                    
+                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                }
+            });
+        });
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        // ===== MEDIA FILTER =====
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.media-card').forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.add('active');
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            card.classList.add('active');
+                        } else {
+                            card.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        });
+
+        // ===== FORM SUBMISSION =====
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message. We will contact you soon.');
+            e.target.reset();
+        });
+
+        // ===== COUNTER ANIMATION =====
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
